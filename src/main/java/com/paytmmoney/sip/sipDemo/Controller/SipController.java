@@ -34,7 +34,7 @@ public class SipController {
 
     @ResponseBody
     @GetMapping(value = "/getAllById/{id}")
-    public Optional<SipEntity> findByID(@PathVariable (value = "id") Integer id)
+    public Optional<SipEntity> findByID(@PathVariable (value = "id") Long id)
     {
         Optional<SipEntity> newEntityList = sipservice.getAllEntitiesById(id);
         return newEntityList;

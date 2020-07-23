@@ -1,19 +1,18 @@
 package com.paytmmoney.sip.sipDemo.model.mysql;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "sip_table")
 public class SipEntity {
 
-      public SipEntity() {}
+      //public SipEntity() {}
 
      @Id
      @Column(name = "id")
+     @GeneratedValue(strategy = GenerationType.AUTO)
      private int id;
 
      @Column(name = "userid")
@@ -32,7 +31,7 @@ public class SipEntity {
      private String SchemeName;
 
      @Column(name = "nextSipDate")
-     private Timestamp NextSipDate;
+     private Date NextSipDate;
 
      @Column(name = "status")
      private String status;
@@ -86,11 +85,11 @@ public class SipEntity {
         SchemeName = schemeName;
     }
 
-    public Timestamp getNextSipDate() {
+    public Date getNextSipDate() {
         return NextSipDate;
     }
 
-    public void setNextSipDate(Timestamp nextSipDate) {
+    public void setNextSipDate(Date nextSipDate) {
         NextSipDate = nextSipDate;
     }
 
