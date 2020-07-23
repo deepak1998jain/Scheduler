@@ -1,5 +1,4 @@
     package com.paytmmoney.sip.sipDemo.Service;
-
     import com.paytmmoney.sip.sipDemo.model.mysql.SipEntity;
     import com.paytmmoney.sip.sipDemo.repository.mysql.SipRepository;
     import org.springframework.beans.factory.annotation.Autowired;
