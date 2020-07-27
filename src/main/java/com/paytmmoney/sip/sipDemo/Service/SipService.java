@@ -19,6 +19,13 @@
 
             return sipList;
         }
+/*
+        public List<SipEntity> getAllEntities()
+        {
+            List<SipEntity> sipList = sipRepository.findAll();
+
+            return sipList;
+        }
 
         public Optional<SipEntity> getAllEntitiesById(Long id)
         {
@@ -26,5 +33,5 @@
 
             return sipList1;
         }
-
+*/
     }

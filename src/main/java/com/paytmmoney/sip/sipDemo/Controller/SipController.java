@@ -23,6 +23,7 @@ public class SipController {
         return "Hello";
     }
 
+
     @ResponseBody
     @GetMapping(value = "/getAllEntities")
     public List<SipEntity> getAllEntities()
@@ -31,7 +32,7 @@ public class SipController {
 
          return newList;
     }
-
+/*
     @ResponseBody
     @GetMapping(value = "/getAllById/{id}")
     public Optional<SipEntity> findByID(@PathVariable (value = "id") Long id)
@@ -39,4 +40,6 @@ public class SipController {
         Optional<SipEntity> newEntityList = sipservice.getAllEntitiesById(id);
         return newEntityList;
     }
+    */
+
 }

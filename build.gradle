@@ -24,7 +24,9 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
 	compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.3.1.RELEASE'
 
-	runtime group: 'mysql', name: 'mysql-connector-java', version: '5.1.43'
+
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.14'
+
 
 }
 

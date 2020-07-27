@@ -1,15 +1,25 @@
 package com.paytmmoney.sip.sipDemo.model.mysql;
-
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "sip_table")
+//@Table(name = "sip_table")
+@Table(name = "demo")
 public class SipEntity {
 
-      //public SipEntity() {}
 
+    @Id
+    @Column(name = "demoid")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long myid;
+
+    @Column(name = "name")
+    private String name;
+
+
+    //public SipEntity() {}
+/*
      @Id
      @Column(name = "id")
      @GeneratedValue(strategy = GenerationType.AUTO)
@@ -100,6 +110,6 @@ public class SipEntity {
     public void setStatus(String status) {
         this.status = status;
     }
-
+*/
 
 }
