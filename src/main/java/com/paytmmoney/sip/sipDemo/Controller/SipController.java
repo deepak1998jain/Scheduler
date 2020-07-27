@@ -30,6 +30,12 @@ public class SipController {
     {
          List<SipEntity> newList = sipservice.getAllEntities();
 
+         for(SipEntity sipentity: newList)
+         {
+             System.out.println(sipentity.getMyid());
+             System.out.println(sipentity.getName());
+         }
+
          return newList;
     }
 /*

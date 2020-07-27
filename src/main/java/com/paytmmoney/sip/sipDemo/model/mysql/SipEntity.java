@@ -10,9 +10,25 @@ public class SipEntity {
 
 
     @Id
-    @Column(name = "demoid")
+    @Column(name = "iddemo")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long myid;
+
+    public long getMyid() {
+        return myid;
+    }
+
+    public void setMyid(long myid) {
+        this.myid = myid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     @Column(name = "name")
     private String name;

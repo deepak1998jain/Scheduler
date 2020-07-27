@@ -13,23 +13,18 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.3.1.RELEASE'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.3.1.RELEASE'
+
+	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.1.Final'
+
+	runtime group: 'mysql', name: 'mysql-connector-java', version: '8.0.14'
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 
-	// https://mvnrepository.com/artifact/org.hibernate/hibernate-core
-	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.1.Final'
-
-	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
-	compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.3.1.RELEASE'
-
-
-	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.14'
-
-
 }
-
 test {
 	useJUnitPlatform()
 }
