@@ -24,6 +24,8 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+
 }
 test {
 	useJUnitPlatform()

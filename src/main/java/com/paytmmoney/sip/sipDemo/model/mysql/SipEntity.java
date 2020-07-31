@@ -4,119 +4,92 @@ import java.sql.Date;
 import java.sql.Timestamp;
 
 @Entity
-//@Table(name = "sip_table")
-@Table(name = "demo")
+@Table(name = "sip_table")
 public class SipEntity {
 
+    public SipEntity() {}
 
     @Id
-    @Column(name = "iddemo")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long myid;
+    private long id;
 
-    public long getMyid() {
-        return myid;
-    }
+    @Column(name = "userid")
+    private long userId;
 
-    public void setMyid(long myid) {
-        this.myid = myid;
-    }
+    @Column(name = "foliono")
+    private String folioNo;
 
-    public String getName() {
-        return name;
-    }
+    @Column(name = "amount")
+    private double amount;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Column(name = "isin")
+    private String isIn;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "schemename")
+    private String schemeName;
 
+    @Column(name = "nextsipdate")
+    private Date nextSipDate;
 
-    //public SipEntity() {}
-/*
-     @Id
-     @Column(name = "id")
-     @GeneratedValue(strategy = GenerationType.AUTO)
-     private int id;
-
-     @Column(name = "userid")
-     private int UserId;
-
-     @Column(name = "folioNo")
-     private String FolioNo;
-
-     @Column(name = "amount")
-     private double Amount;
-
-     @Column(name = "isin")
-     private String IsIn;
-
-     @Column(name = "schemename")
-     private String SchemeName;
-
-     @Column(name = "nextSipDate")
-     private Date NextSipDate;
-
-     @Column(name = "status")
-     private String status;
+    @Column(name = "status")
+    private String status;
 
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getUserId() {
-        return UserId;
+    public long getUserId() {
+        return userId;
     }
 
     public void setUserId(int userId) {
-        UserId = userId;
+        this.userId = userId;
     }
 
     public String getFolioNo() {
-        return FolioNo;
+        return folioNo;
     }
 
     public void setFolioNo(String folioNo) {
-        FolioNo = folioNo;
+        this.folioNo = folioNo;
     }
 
     public double getAmount() {
-        return Amount;
+        return amount;
     }
 
     public void setAmount(double amount) {
-        Amount = amount;
+        this.amount = amount;
     }
 
     public String getIsIn() {
-        return IsIn;
+        return isIn;
     }
 
     public void setIsIn(String isIn) {
-        IsIn = isIn;
+        this.isIn = isIn;
     }
 
     public String getSchemeName() {
-        return SchemeName;
+        return schemeName;
     }
 
     public void setSchemeName(String schemeName) {
-        SchemeName = schemeName;
+        this.schemeName = schemeName;
     }
 
     public Date getNextSipDate() {
-        return NextSipDate;
+        return nextSipDate;
     }
 
     public void setNextSipDate(Date nextSipDate) {
-        NextSipDate = nextSipDate;
+        this.nextSipDate = nextSipDate;
     }
 
     public String getStatus() {
@@ -126,6 +99,6 @@ public class SipEntity {
     public void setStatus(String status) {
         this.status = status;
     }
-*/
+
 
 }

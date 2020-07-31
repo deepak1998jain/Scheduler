@@ -1,19 +1,21 @@
 package com.paytmmoney.sip.sipDemo.Controller;
 import com.paytmmoney.sip.sipDemo.Service.SipService;
+import com.paytmmoney.sip.sipDemo.dto.MfIsInSipDto;
 import com.paytmmoney.sip.sipDemo.model.mysql.SipEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class SipController {
 
      @Autowired
-     private SipService sipservice;
+     private SipService sipService;
 
 
     @ResponseBody
@@ -28,24 +30,24 @@ public class SipController {
     @GetMapping(value = "/getAllEntities")
     public List<SipEntity> getAllEntities()
     {
-         List<SipEntity> newList = sipservice.getAllEntities();
-
-         for(SipEntity sipentity: newList)
-         {
-             System.out.println(sipentity.getMyid());
-             System.out.println(sipentity.getName());
-         }
-
+         List<SipEntity> newList = sipService.getAllEntities();
          return newList;
     }
-/*
+
     @ResponseBody
-    @GetMapping(value = "/getAllById/{id}")
-    public Optional<SipEntity> findByID(@PathVariable (value = "id") Long id)
+    @GetMapping(value = "/getAllByUserId/{userid}")
+    public List<SipEntity> findByID(@PathVariable (value = "userid") Long userid)
     {
-        Optional<SipEntity> newEntityList = sipservice.getAllEntitiesById(id);
+         List <SipEntity> newEntityList = sipService.getAllEntitiesByUserId(userid);
         return newEntityList;
     }
-    */
 
+    @ResponseBody
+    @GetMapping(value = "v2/getAllByUserId/{userid}")
+    public List<MfIsInSipDto> findByIDV2(@PathVariable (value = "userid") Long userid, @RequestParam(value = "pageNumber",required = false,defaultValue = "1")Integer pageNumber, @RequestParam(value = "pageSize",required = false,defaultValue = "10")Integer pageSize)
+    {
+        pageNumber--;
+        List<MfIsInSipDto> mfIsInSipDtoLister = sipService.getAllEntitiesByUserIdV2(userid,pageNumber,pageSize);
+        return mfIsInSipDtoLister;
+    }
 }
